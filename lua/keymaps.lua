@@ -44,8 +44,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank{timeout=500}
+    vim.highlight.on_yank { timeout = 500 }
   end,
 })
+
+-- My own keymaps
+
+vim.keymap.set('n', '<leader>f', ':Lexplore 30<cr>', { desc = 'Open/close side [f]ile explorer' })
 
 -- vim: ts=2 sts=2 sw=2 et
